@@ -7,68 +7,46 @@
 //#include<stdlib.h>
 #include<vector>
 #include<list>
-//#include "(ESE 224) Final Project.h"
+#include "Classes.h"
 
 using namespace std;
 
 int main() {
-	int ts, p,a,d,c, TStop, m = 3, n = 10, NMax = 10;
+	int TStop, m = 3, n = 10, NMax = 10;
 	//t = time steps, k = time step to move up or down, n = number of floors, nMax = the max amount of people
 
-	string character;
 	string line;
 
 	ifstream data;
 
-	vector<int> timestep;
-	vector<int> person;
-	vector<int> arrival;
-	vector<int> destination;
+	vector<int> timesteps;
+	vector<int> people;
+	vector<int> arrivals;
+	vector<int> destinations;
 
-	//	Lines lines;
-	//Time time;
-	//Person person;
-	//Elevator elevator;
+	Person person;
+	Elevator elevator;
 
 	data.open("input.txt");
 	if (data.is_open()) {
 		while (getline(data, line)) {
-		//	for(int i = 2; i <= 6; i+2)
-			character = line.at(0);
-			ts = stoi(character);
-			timestep.push_back(ts);
-			character = line.at(2);
-			p = stoi(character);
-			person.push_back(p);
-			character = line.at(4);
-			a = stoi(character);
-			arrival.push_back(a);
-			character = line.at(6);
-			d = stoi(character);
-			destination.push_back(d);
-			
+			timesteps.push_back(person.get_timesteps(line));
+			people.push_back(person.get_people(line));
+			arrivals.push_back(person.get_arrivals(line));
+			destinations.push_back(person.get_destinations(line));
 		}
-		for (unsigned n = 0; n < person.size(); ++n) {
-			cout << "PERSON: " << person.at(n) << endl;
-			cout << "ARRIVAL: " << arrival.at(n) << endl;
-			cout << "DESTINATION: " << destination.at(n) << endl;
+		for (unsigned n = 0; n < timesteps.size(); ++n) {
+			cout << "NUMBER: " << n+1 << endl;
+			cout << "PERSON: " << people.at(n) << endl;
+			cout << "ARRIVAL: " << arrivals.at(n) << endl;
+			cout << "DESTINATION: " << destinations.at(n) << endl;
 		}
 	}
 	else cout << "Unable to open file";
 	data.close();
 
-	//READ ALL THE PEOPLE INTO AN VECTOR
-	//READ ALL THE ARRIVAL INTO VECTOR
-	//READ ALL THE DESTINATION INTO VECTOR
-
-//	cout << "LINES: " << lines.get_lines(input) << endl;
-//	for (int t = 1; t <= lines.get_lines(input); t++) {
-		//input.clear();
-
-
 	cout << "Enter the amount of discrete time steps: ";
 	cin >> TStop;
-
 
 	for (int t = 1; t <= TStop; t++) {
 		if (timestep.at(t) == t) {

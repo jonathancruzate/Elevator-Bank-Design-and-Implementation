@@ -2,99 +2,29 @@
 
 #include "Classes.h"
 
-/*
-int Lines::get_lines(vector<string> input) {
-	while (getline(input, line)) {
-		++number_of_lines;
-	}
-	return number_of_lines;
-}
-
-int Time::get_timestep(vector<string> input, int line) {
-	for (int i = 1; i <= line; i++) {
-		getline(input, timestep);
-		timecharacter = timestep.at(0);
-		ts = stoi(timecharacter);
-	}
+int Person::get_timesteps(string line) {
+	character = line.at(0);
+	ts = stoi(character);
 	return ts;
 }
 
-*/
-
-Person::Person() {
-	while (getline(data, line)) {
-		character = line.at(0);
-		ts = stoi(character);
-		timestep.push_back(ts);
-		character = line.at(2);
-		p = stoi(character);
-		person.push_back(p);
-		character = line.at(4);
-		a = stoi(character);
-		arrival.push_back(a);
-		character = line.at(6);
-		d = stoi(character);
-		destination.push_back(d);
-
-	}
-	for (unsigned n = 0; n < person.size(); ++n) {
-		cout << "PERSON: " << person.at(n) << endl;
-		cout << "ARRIVAL: " << arrival.at(n) << endl;
-		cout << "DESTINATION: " << destination.at(n) << endl;
-	}
-}
-
-/*
-Person::Person() {
-	while (getline(data, line)) {
-		character = line.at(0);
-		ts = stoi(character);
-		timestep.push_back(ts);
-		character = line.at(2);
-		p = stoi(character);
-		person.push_back(p);
-		character = line.at(4);
-		a = stoi(character);
-		arrival.push_back(a);
-		character = line.at(6);
-		d = stoi(character);
-		destination.push_back(d);
-
-	}
-for (unsigned n = 0; n < person.size(); ++n) {
-	cout << "PERSON: " << person.at(n) << endl;
-	cout << "ARRIVAL: " << arrival.at(n) << endl;
-	cout << "DESTINATION: " << destination.at(n) << endl;
-}
-}
-
-int Person::get_person(vector<int> input, int line) {
-	for (int i = 1; i <= line; i++) {
-		getline(input, id);
-		person = id.at(2);
-		p = stoi(person);
-	}
+int Person::get_people(string line) {
+	character = line.at(2);
+	p = stoi(character);
 	return p;
 }
 
-int Person::get_arrival(vector<int>, int) {
-	for (int i = 1; i <= line; i++) {
-		getline(input, id);
-		arrival = id.at(4);
-		a = stoi(arrival);
-	}
+int Person::get_arrivals(string line) {
+	character = line.at(4);
+	a = stoi(character);
 	return a;
 }
 
-int Person::get_destination(vector<int>, int) {
-	for (int i = 1; i <= line; i++) {
-		getline(input, id);
-		destination = id.at(6);
-		d = stoi(destination);
-	}
+int Person::get_destinations(string line) {
+	character = line.at(6);
+	d = stoi(character);
 	return d;
 }
-*/
 
 string Elevator::get_direction(int p, int a, int d) {
 	Person test;

@@ -20,70 +20,14 @@ using namespace std;
 //=================================
 // CLASSES
 
-/*
-class Lines {
-	int number_of_lines = 0;
-	string line;
-//	ifstream input;
-public:
-	int get_lines(vector<string>);
-};
-
-
-class Time {
-	int ts = 0;
-	string timecharacter;
-	string line;
-//	ifstream input;
-public:
-	int get_timestep(vector<int>, int);
-};
-
-*/
-
-/*
 class Person {
-	int ts, p, a, d, c;
-	//t = time steps, k = time step to move up or down, n = number of floors, nMax = the max amount of people
-
-	string character;
-	string line;
-
-	vector<int> timestep;
-	vector<int> person;
-	vector<int> arrival;
-	vector<int> destination;
+	int ts, p, a, d;
+	string character, line;
 public:
-	Person::Person();
-}
-*/
-
-class Person {
-	int ts, p, a, d, c;
-	//t = time steps, k = time step to move up or down, n = number of floors, nMax = the max amount of people
-
-	string character;
-	string line;
-
-	ifstream data;
-
-	vector<int> timestep;
-	vector<int> person;
-	vector<int> arrival;
-	vector<int> destination;
-public:
-	Person::Person();
-}
-	
-	/*
-	int p, a, d;
-	string id, person, arrival, destination;
-//	ifstream input;
-public:
-	int get_person(vector<int>, int);
-	int get_arrival(vector<int>, int);
-	int get_destination(vector<int>, int);
-	*/
+	int Person::get_timesteps(string);
+	int Person::get_people(string);
+	int Person::get_arrivals(string);
+	int Person::get_destinations(string);
 };
 
 class Elevator {
