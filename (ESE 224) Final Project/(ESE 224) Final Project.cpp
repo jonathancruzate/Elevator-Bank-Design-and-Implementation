@@ -1,7 +1,7 @@
 //(ESE 224) Final Project//
 
 #include<iostream>
-#include<fstream>
+//#include<fstream>
 #include<string>
 //#include<stdafx.h>
 //#include<stdlib.h>
@@ -52,7 +52,6 @@ int main() {
 		if (timesteps.at(t) == t) {
 			elevator.list_of_stops(arrivals, destinations, n);
 		}
-	}
 
 	return 0;
 }
