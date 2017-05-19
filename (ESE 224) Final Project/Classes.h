@@ -41,7 +41,7 @@ class Elevator {
 public:
 	string get_direction(int, int, int);
 	int get_number_of_people(int);
-	void list_of_stops(int, int, int);
+	void list_of_stops(vector<int>, vector<int>, int);
 };
 
 #endif // _(ESE_224)_FINAL PROJECT_INCLUDED_

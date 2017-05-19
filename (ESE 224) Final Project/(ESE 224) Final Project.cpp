@@ -17,12 +17,12 @@ int main() {
 
 	string line;
 
-	ifstream data;
-
 	vector<int> timesteps;
 	vector<int> people;
 	vector<int> arrivals;
 	vector<int> destinations;
+
+	ifstream data;
 
 	Person person;
 	Elevator elevator;
@@ -36,7 +36,7 @@ int main() {
 			destinations.push_back(person.get_destinations(line));
 		}
 		for (unsigned n = 0; n < timesteps.size(); ++n) {
-			cout << "NUMBER: " << n+1 << endl;
+			cout << "NUMBER: " << n + 1 << endl;
 			cout << "PERSON: " << people.at(n) << endl;
 			cout << "ARRIVAL: " << arrivals.at(n) << endl;
 			cout << "DESTINATION: " << destinations.at(n) << endl;
@@ -49,12 +49,8 @@ int main() {
 	cin >> TStop;
 
 	for (int t = 1; t <= TStop; t++) {
-		if (timestep.at(t) == t) {
-			cout << "PERSON: " << person.get_person(person, t) << endl;
-			cout << "ARRIVAL: " << person.get_arrival(arrival, t) << endl;
-			cout << "DESTINATION: " << person.get_destination(destination, t) << endl;
-			cout << "DIRECTION:" << elevator.get_direction(person.get_person(input, t), person.get_arrival(input, t), person.get_destination(input, t)) << endl;
-			elevator.list_of_stops(person.get_arrival(input, t), person.get_destination(input, t), n);
+		if (timesteps.at(t) == t) {
+			elevator.list_of_stops(arrivals, destinations, n);
 		}
 	}
 
