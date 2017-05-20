@@ -77,12 +77,13 @@ int main() {
 					Elevator test;
 					elevators.at(i) = test;
 
-					if (test.get_direction == "standing" || test.get_direction == person.get_direction(arrivals.at(n), destinations.at(n)))
-					{
+				
+//					if (test.get_direction == "standing" || test.get_direction == person.get_direction(arrivals.at(n), destinations.at(n)))
+//					{
 
-						int distance = abs(arrivals.at(n)-(test.get_location);
+						//int distance = abs(arrivals.at(n)-(test.get_location);
 
-					}
+//					}
 				}
 			//	Elevators.at(t).assign_person(people.at(t), arrivals.at(t), destinations.at(t));
 			}
