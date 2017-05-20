@@ -16,7 +16,7 @@
 using namespace std;
 
 int main() {
-	int TStop, m = 3, n = 10, NMax = 10;
+	int person_distance, TStop, m = 3, n = 10, NMax = 10;
 
 	string line;
 
@@ -24,15 +24,20 @@ int main() {
 	vector<int> people;
 	vector<int> arrivals;
 	vector<int> destinations;
-	vector<Elevator> Elevators;
+	vector<int> locations;
+	//vector<int> locations(m, 0);
+	//vector<int>::iterator it;
+	vector<Elevator> elevators;
 
 	ifstream data;
 
 	Person person;
 
 	data.open("input.txt");
-	if (data.is_open()) {
-		while (getline(data, line)) {
+	if (data.is_open())
+	{
+		while (getline(data, line))
+		{
 			timesteps.push_back(person.get_timesteps(line));
 			people.push_back(person.get_people(line));
 			arrivals.push_back(person.get_arrivals(line));
@@ -53,17 +58,31 @@ int main() {
 	cout << "Enter the amount of elevators: ";
 	cin >> m;
 
-	for (int i = 0; i < m; ++i) {
+	for (int i = 0; i < m; ++i)
+	{
 		Elevator elevator;
-		Elevators.push_back(elevator);
+		elevators.push_back(elevator);
+		locations.push_back(elevator.get_location());
 	}
 
 	cout << "Enter the amount of discrete time steps: ";
 	cin >> TStop;
 
 	for (int t = 1; t <= TStop; t++) {
-		if (timesteps.at(t) == t) {
-			Elevators.at(1).list_of_stops(arrivals.at(t), destinations.at(t), n);
+		for (unsigned n = 0; n < timesteps.size(); ++n)
+		{
+			if (timesteps.at(n) == t) {
+				for (int i = 0; i < m; ++i)
+				{
+					if (elevators.at(i).get_direction == "standing" || elevators.at(i).get_direction == person.get_direction(arrivals.at(n), destinations.at(n)))
+					{
+
+						int distance = abs(arrivals.at(n)-(elevators.at(i)).get_location);
+
+					}
+				}
+			//	Elevators.at(t).assign_person(people.at(t), arrivals.at(t), destinations.at(t));
+			}
 		}
 	}
 
