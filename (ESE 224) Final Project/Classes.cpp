@@ -40,9 +40,8 @@ int Elevator::get_number_of_people(int n) {
 	return number_of_people;
 }
 
-void Elevator::list_of_stops(vector<int> a, vector<int> d, int n) {
+void Elevator::list_of_stops(int a, int d, int n) {
 	//Person::test.get_arrival(int 1);
-	// VECTOR HERE
 
 	for (int i = 1; i <= n; i++) {
 		if (a == i) {

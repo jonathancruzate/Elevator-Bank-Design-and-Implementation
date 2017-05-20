@@ -1,24 +1,17 @@
 //Classes.h//
 
-//=================================
-// GUARD
 #ifndef _ESE_224_FINAL_PROJECT_INCLUDED_
 #define _ESE_224_FINAL_PROJECT_INCLUDED_
 
-//=================================
-// DEPENDENCIES
-#include<iostream>
-#include<fstream>
+//#include<iostream>
+//#include<fstream>
 #include<string>
 //#include<stdafx.h>
 //#include<stdlib.h>
-#include<list>
 #include<vector>
+#include<list>
 
 using namespace std;
-
-//=================================
-// CLASSES
 
 class Person {
 	int ts, p, a, d;
@@ -41,7 +34,7 @@ class Elevator {
 public:
 	string get_direction(int, int, int);
 	int get_number_of_people(int);
-	void list_of_stops(vector<int>, vector<int>, int);
+	void list_of_stops(int, int, int);
 };
 
 #endif // _(ESE_224)_FINAL PROJECT_INCLUDED_

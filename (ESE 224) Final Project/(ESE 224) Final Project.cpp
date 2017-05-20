@@ -1,7 +1,11 @@
-//(ESE 224) Final Project//
+/*
+*(ESE 224) Final Project
+*Jonathan Cruzate and Miguel Arellano
+*05/19/17
+*/
 
 #include<iostream>
-//#include<fstream>
+#include<fstream>
 #include<string>
 //#include<stdafx.h>
 //#include<stdlib.h>
@@ -35,12 +39,14 @@ int main() {
 			arrivals.push_back(person.get_arrivals(line));
 			destinations.push_back(person.get_destinations(line));
 		}
+		/*
 		for (unsigned n = 0; n < timesteps.size(); ++n) {
 			cout << "NUMBER: " << n + 1 << endl;
 			cout << "PERSON: " << people.at(n) << endl;
 			cout << "ARRIVAL: " << arrivals.at(n) << endl;
 			cout << "DESTINATION: " << destinations.at(n) << endl;
 		}
+		*/
 	}
 	else cout << "Unable to open file";
 	data.close();
@@ -50,8 +56,8 @@ int main() {
 
 	for (int t = 1; t <= TStop; t++) {
 		if (timesteps.at(t) == t) {
-			elevator.list_of_stops(arrivals, destinations, n);
+			elevator.list_of_stops(arrivals.at(t), destinations.at(t), n);
 		}
-
+	}
 	return 0;
 }
