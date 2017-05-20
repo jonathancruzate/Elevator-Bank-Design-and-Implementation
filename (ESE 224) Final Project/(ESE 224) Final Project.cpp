@@ -43,14 +43,14 @@ int main() {
 			arrivals.push_back(person.get_arrivals(line));
 			destinations.push_back(person.get_destinations(line));
 		}
-		/*
+		
 		for (unsigned n = 0; n < timesteps.size(); ++n) {
 			cout << "NUMBER: " << n + 1 << endl;
 			cout << "PERSON: " << people.at(n) << endl;
 			cout << "ARRIVAL: " << arrivals.at(n) << endl;
 			cout << "DESTINATION: " << destinations.at(n) << endl;
 		}
-		*/
+
 	}
 	else cout << "Unable to open file";
 	data.close();
@@ -74,16 +74,19 @@ int main() {
 			if (timesteps.at(n) == t) {
 				for (int i = 0; i < m; ++i)
 				{
-					Elevator test;
-					elevators.at(i) = test;
+					//Elevator test;
+					//elevators.at(i) = test;
 
 				
-//					if (test.get_direction == "standing" || test.get_direction == person.get_direction(arrivals.at(n), destinations.at(n)))
-//					{
+//					if (test.get_direction() == "standing" || test.get_direction() == person.get_direction(arrivals.at(n), destinations.at(n)))
+
+						if (elevators.at(i).get_direction() == "standing" || elevators.at(i).get_direction() == person.get_direction(arrivals.at(n), destinations.at(n)))
+
+					{
 
 						//int distance = abs(arrivals.at(n)-(test.get_location);
 
-//					}
+					}
 				}
 			//	Elevators.at(t).assign_person(people.at(t), arrivals.at(t), destinations.at(t));
 			}
