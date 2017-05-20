@@ -27,7 +27,6 @@ int Person::get_destinations(string line) {
 }
 
 string Elevator::get_direction(int p, int a, int d) {
-	Person test;
 	if (a < d) {
 		direction = "UP";
 	}
@@ -41,8 +40,6 @@ int Elevator::get_number_of_people(int n) {
 }
 
 void Elevator::list_of_stops(int a, int d, int n) {
-	//Person::test.get_arrival(int 1);
-
 	for (int i = 1; i <= n; i++) {
 		if (a == i) {
 			//ADD TO LIST

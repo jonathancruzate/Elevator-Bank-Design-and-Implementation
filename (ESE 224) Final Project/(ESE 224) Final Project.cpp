@@ -1,5 +1,5 @@
 /*
-*(ESE 224) Final Project
+*(ESE 224) Final Project.cpp
 *Jonathan Cruzate and Miguel Arellano
 *05/19/17
 */
@@ -17,7 +17,6 @@ using namespace std;
 
 int main() {
 	int TStop, m = 3, n = 10, NMax = 10;
-	//t = time steps, k = time step to move up or down, n = number of floors, nMax = the max amount of people
 
 	string line;
 
@@ -25,11 +24,11 @@ int main() {
 	vector<int> people;
 	vector<int> arrivals;
 	vector<int> destinations;
+	vector<Elevator> Elevators;
 
 	ifstream data;
 
 	Person person;
-	Elevator elevator;
 
 	data.open("input.txt");
 	if (data.is_open()) {
@@ -51,13 +50,22 @@ int main() {
 	else cout << "Unable to open file";
 	data.close();
 
+	cout << "Enter the amount of elevators: ";
+	cin >> m;
+
+	for (int i = 0; i < m; ++i) {
+		Elevator elevator;
+		Elevators.push_back(elevator);
+	}
+
 	cout << "Enter the amount of discrete time steps: ";
 	cin >> TStop;
 
 	for (int t = 1; t <= TStop; t++) {
 		if (timesteps.at(t) == t) {
-			elevator.list_of_stops(arrivals.at(t), destinations.at(t), n);
+			Elevators.at(1).list_of_stops(arrivals.at(t), destinations.at(t), n);
 		}
 	}
+
 	return 0;
 }

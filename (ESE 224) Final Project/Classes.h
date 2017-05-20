@@ -3,11 +3,7 @@
 #ifndef _ESE_224_FINAL_PROJECT_INCLUDED_
 #define _ESE_224_FINAL_PROJECT_INCLUDED_
 
-//#include<iostream>
-//#include<fstream>
 #include<string>
-//#include<stdafx.h>
-//#include<stdlib.h>
 #include<vector>
 #include<list>
 
@@ -24,7 +20,7 @@ public:
 };
 
 class Elevator {
-	int p, a, d; //m = number of elevators, p = the number of people
+	int p, a, d; 
 	string direction;
 	list<int> e1_stops;
 	list<int> e2_stops;
