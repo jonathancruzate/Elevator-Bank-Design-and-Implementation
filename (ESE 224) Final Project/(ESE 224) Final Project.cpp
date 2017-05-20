@@ -74,10 +74,13 @@ int main() {
 			if (timesteps.at(n) == t) {
 				for (int i = 0; i < m; ++i)
 				{
-					if (elevators.at(i).get_direction == "standing" || elevators.at(i).get_direction == person.get_direction(arrivals.at(n), destinations.at(n)))
+					Elevator test;
+					elevators.at(i) = test;
+
+					if (test.get_direction == "standing" || test.get_direction == person.get_direction(arrivals.at(n), destinations.at(n)))
 					{
 
-						int distance = abs(arrivals.at(n)-(elevators.at(i)).get_location);
+						int distance = abs(arrivals.at(n)-(test.get_location);
 
 					}
 				}
